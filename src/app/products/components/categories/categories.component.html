@@ -1,0 +1,7 @@
+<ul>
+    <ng-container *ngFor="let category of categories; trackBy: trackByValue">
+        <li>
+            <app-category (categorySelect)="selectCategory($event)" [category]="category"></app-category>
+        </li>
+    </ng-container>
+</ul>

@@ -1,0 +1,32 @@
+.listing {
+    padding-top: 15px;
+}
+
+.categories {
+    grid-area: categories;
+}
+mat-card {
+    cursor: pointer;
+}
+.products {
+    grid-area: products;
+
+    .listing {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-gap: 10px;
+
+        .product-listing {
+            mat-card {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.products-container {
+    display: grid;
+    grid-template-areas: 'categories products products products';
+    grid-gap: 10px;
+    padding: 10px;
+}

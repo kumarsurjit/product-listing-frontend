@@ -1,0 +1,23 @@
+<div class="products-container">
+    <div class="categories">
+        <mat-toolbar>Categories</mat-toolbar>
+        <app-categories (categorySelected)="updateProducts($event)" [categories]="categories"
+                        class="listing"></app-categories>
+    </div>
+    <div class="products">
+        <mat-toolbar>Products</mat-toolbar>
+        <div class="listing">
+            <div class="product-listing">
+                <ng-container *ngFor="let product of products; trackBy: trackByValue">
+                    <mat-card (click)="selectProduct(product)">
+                        <mat-card-title>{{ product?.name }}</mat-card-title>
+                        <mat-card-content>{{ product?.description }}</mat-card-content>
+                    </mat-card>
+                </ng-container>
+            </div>
+            <div class="product-details">
+                <app-product [product]="product"></app-product>
+            </div>
+        </div>
+    </div>
+</div>
